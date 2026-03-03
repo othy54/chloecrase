@@ -1,0 +1,8 @@
+@theme {
+    --color-blue : #0011FF;
+    
+    /* Font Families */
+    --font-callAustin: 'CallAustin', sans-serif;
+    --font-poppins: 'Poppins', sans-serif;
+    --font-satoshi: 'Satoshi', sans-serif;
+}

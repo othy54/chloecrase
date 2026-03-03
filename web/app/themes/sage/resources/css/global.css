@@ -1,0 +1,51 @@
+@view-transition {
+  navigation: auto;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  scroll-behavior: smooth;
+
+  font-size: 0.8334vw;
+  font-family: var(--font-poppins);
+
+  @media (width < theme(--breakpoint-lg)) {
+    font-size: calc(16 / 390 * 100 * 1vw);
+  }
+}
+
+body {
+  background-image: url('../images/noise.png');
+  background-color: #efefef;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.5) 61.06%
+  );
+}
+
+.button-link {
+  position: relative;
+  width: fit-content;
+
+  &::before {
+    content: url('../images/arrow.svg');
+    position: absolute;
+    width: 5.5rem;
+    height: 3.8125rem;
+    left: 0;
+    top: 50%;
+    rotate: 45deg;
+    translate: -0.8rem -50%;
+    pointer-events: none;
+  }
+}

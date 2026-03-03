@@ -1,0 +1,15 @@
+@utility container {
+  max-width: 111.875rem;
+  margin-inline: auto;
+
+  @media (width < theme(--breakpoint-lg)) {
+    padding-inline: 1.5rem;
+  }
+}
+
+@utility bold-to-austin {
+  & strong {
+    font-weight: 400;
+    font-family: var(--font-callAustin);
+  }
+}

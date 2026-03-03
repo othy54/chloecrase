@@ -1,0 +1,24 @@
+/* Marquee défilant (CSS seul) */
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee__track {
+  display: inline-flex;
+  animation: marquee 25s linear infinite;
+}
+
+.marquee__content {
+  flex-shrink: 0;
+  padding-right: 0.25em;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

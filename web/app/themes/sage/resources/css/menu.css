@@ -1,0 +1,11 @@
+.menu-main {
+  display: flex;
+  column-gap: 2.625rem;
+  font-size: 1.25rem;
+  font-family: var(--font-satoshi);
+
+  @media (width < theme(--breakpoint-lg)) {
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+  }
+}

@@ -1,0 +1,90 @@
+/* Flottement très léger des images "where begin" — même sway pour toutes */
+.float-sway {
+  animation: float-sway-subtle 6s ease-in-out infinite;
+}
+
+.where-begin > div:nth-child(2) .float-sway { animation-delay: 0s; }
+.where-begin > div:nth-child(3) .float-sway { animation-delay: 0.5s; }
+.where-begin > div:nth-child(4) .float-sway { animation-delay: 1s; }
+.where-begin > div:nth-child(5) .float-sway { animation-delay: 1.5s; }
+.where-begin > div:nth-child(6) .float-sway { animation-delay: 0.2s; }
+.where-begin > div:nth-child(7) .float-sway { animation-delay: 0.8s; }
+
+@keyframes float-sway-subtle {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(0.15rem, -0.2rem) rotate(0.3deg);
+  }
+  50% {
+    transform: translate(-0.1rem, 0.1rem) rotate(-0.2deg);
+  }
+  75% {
+    transform: translate(0.1rem, 0.15rem) rotate(0.25deg);
+  }
+}
+
+.project-wrapper {
+  & .project-image {
+    transition: aspect-ratio 0.5s ease-out;
+  }
+
+  & .categories-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition: grid-template-rows 0.5s ease-out;
+  }
+
+  & .excerpt {
+    transition: margin-top 0.5s ease-out;
+  }
+
+  & .button {
+    position: relative;
+    display: grid;
+    grid-template-rows: 0fr;
+    transition:
+      padding 0.5s ease-out,
+      margin 0.5s ease-out;
+
+    &::before {
+      content: url('../images/arrow.svg');
+      position: absolute;
+      width: 5.5rem;
+      height: 3.8125rem;
+      left: 0;
+      top: 50%;
+      rotate: 45deg;
+      translate: -0.8rem -50%;
+      opacity: 0;
+      transition: opacity 0.5s ease-out;
+      pointer-events: none;
+    }
+  }
+
+  &:hover {
+    & .project-image {
+      aspect-ratio: 735/553;
+    }
+
+    & .categories-wrapper {
+      grid-template-rows: 1fr;
+    }
+
+    & .excerpt {
+      margin-top: 1.5rem;
+    }
+
+    & .button {
+      grid-template-rows: 1fr;
+      padding-block: 0.5rem;
+      margin-top: 4rem;
+
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+}

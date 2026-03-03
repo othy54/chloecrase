@@ -1,0 +1,12 @@
+@import 'tailwindcss' theme(static);
+@source "../views/";
+@source "../../app/";
+
+@import './global.css';
+@import './variables.css';
+@import './global.css';
+@import './utilities.css';
+@import './menu.css';
+@import './fonts.css';
+@import './home.css';
+@import './footer.css';
