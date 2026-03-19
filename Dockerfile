@@ -26,7 +26,9 @@ COPY . .
 
 # 3) Build assets Sage
 WORKDIR /var/www/html/web/app/themes/sage
-RUN npm ci && npm run build
+RUN composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader \
+    && npm ci \
+    && npm run build
 
 # 4) Apache docroot -> /web
 WORKDIR /var/www/html
