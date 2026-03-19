@@ -24,7 +24,7 @@ class CptProject
                             ->maxFiles(3)
                             ->minFiles(1)
                             ->library('all')
-                            ->format('id')
+
                     ])
                     ->button('Ajouter une ligne d\'images'),
 

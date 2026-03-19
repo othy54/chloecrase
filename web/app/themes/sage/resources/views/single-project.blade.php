@@ -62,7 +62,12 @@
                             <div class="col-span-12 grid grid-cols-subgrid max-lg:gap-y-2">
                                 @foreach ($gallery['project__gallery'] as $image)
                                     <div class="{{ $cols[count($gallery['project__gallery'])] }}">
-                                        @image($image, 'full', ['class' => 'object-cover'])
+                                        @if ($image['type'] === 'video')
+                                            <video class="h-full w-full object-cover" autoplay loop playsinline muted
+                                                src="{{ $image['url'] }}"></video>
+                                        @else
+                                            @image($image['ID'], 'full', ['class' => 'object-cover'])
+                                        @endif
                                     </div>
                                 @endforeach
                             </div>
